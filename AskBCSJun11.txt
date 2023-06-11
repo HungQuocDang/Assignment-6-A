@@ -1,0 +1,31 @@
+3:51
+@here is a general example of how to go about establishing an array that stores the users searches in local storage:
+To create a dynamic array that grows as the user selects cities and store it in the browser's localStorage, you can follow these steps:
+Initialize an empty array to store the city names:
+let selectedCities = [];
+Whenever the user selects a city, add it to the array:
+const cityName = "New York"; // Replace with the actual city name
+selectedCities.push(cityName);
+Store the updated array in the localStorage:
+localStorage.setItem('selectedCities', JSON.stringify(selectedCities));
+Retrieve the array from localStorage when needed:
+const storedCities = localStorage.getItem('selectedCities');
+const selectedCities = JSON.parse(storedCities) || [];
+Note: The JSON.stringify method converts the array to a string representation, and JSON.parse converts the stored string back into an array.
+To add flexibility, you can encapsulate the array operations in functions:
+function addCity(cityName) {
+  selectedCities.push(cityName);
+  localStorage.setItem('selectedCities', JSON.stringify(selectedCities));
+}
+
+function getSelectedCities() {
+  const storedCities = localStorage.getItem('selectedCities');
+  return JSON.parse(storedCities) || [];
+}
+Now, whenever the user selects a city, you can call the addCity function with the selected city name, and to retrieve the selected cities, call the getSelectedCities function.
+NOTE: Copy/pasting wont really get you anywhere and you will need to match the syntax and variables with what you have/will have in your own code ok?
+3:55
+I will need to close the question soon since we have gone over a couple of different questions during this session, but like I suggested: I would schedule a tutoring session if you need any assistance with how the application should be functioning ok?
+Your instructional staff would also be able to offer more insight into the acceptance criteria and the general flow of the application.
+3:55
+If you have any issues with the code itself, you can always post a question to get help with that! We are here 24/7 to offer support so someone will always be available to help out!
