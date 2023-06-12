@@ -5,6 +5,7 @@ var data1=0;
 var data2=0;
 var data3=0;
 var temperature1=0;
+var weather=0;
 var temperature2=0;
 var usersContainer = document.getElementById('users');
 var fetchButton = document.getElementById('fetch-button');
@@ -37,14 +38,15 @@ var requestUrl = weatherUrl;
       console.log("data2",data2);
       console.log("data3",data3);
       
-     temperature1=data2[17];
-      console.log("temperature1", temperature1);
-
-
-      temperature2=data1.temp;
-      console.log("temperature2", temperature2);
-
      
+     
+
+
+      temperature1=data1.main.temp;
+      weather=data1.weather;
+    
+      console.log("temperature1", temperature1);
+      console.log("weather", weather[0].main);
 
       //for (var i = 0; i < data.length; i++) {
         //Creating a h3 element and a p element
