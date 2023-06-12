@@ -6,6 +6,9 @@ var data2=0;
 var data3=0;
 var temperature1=0;
 var weather=0;
+var windSpeed=0;
+var humidity=0;
+var cityName=0;
 var temperature2=0;
 var usersContainer = document.getElementById('users');
 var fetchButton = document.getElementById('fetch-button');
@@ -43,10 +46,17 @@ var requestUrl = weatherUrl;
 
 
       temperature1=data1.main.temp;
-      weather=data1.weather;
+      weather=data1.weather[0].main;
+      windSpeed=data1.wind.speed;
+      humidity=data1.main.humidity;
+      cityName=data1.name;
     
       console.log("temperature1", temperature1);
-      console.log("weather", weather[0].main);
+      console.log("weather", weather);
+      console.log("windSpeed", windSpeed);
+      console.log("humidity", humidity);
+      console.log("cityName", cityName);
+
 
       //for (var i = 0; i < data.length; i++) {
         //Creating a h3 element and a p element
